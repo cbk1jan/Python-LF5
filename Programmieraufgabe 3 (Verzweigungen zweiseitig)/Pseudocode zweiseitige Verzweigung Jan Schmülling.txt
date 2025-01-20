@@ -1,0 +1,28 @@
+Programm:       Übungsaufgabe zweiseitige Verzweigung
+Author:         J. Schmülling
+Änderungsdatum: 20.01.2025
+
+BEGIN
+DECLARE umsatz AS FLOAT
+DECLARE grenzbetrag AS FLOAT
+DECLARE niedrige_provision AS FLOAT
+DECLARE hohe_provision AS FLOAT
+DECLARE provision AS FLOAT
+
+SET grenzbetrag TO 100000.00
+SET niedrige_provision TO 0.05
+SET hohe_provision TO 0.075
+
+OUTPUT "Umsatz eingeben: "
+INPUT umsatz
+
+IF umsatz >= grenzbetrag THEN
+    SET provision TO umsatz * hohe_provision
+    SET provision TO umsatz * hohe_provision
+ELSE
+    SET provision TO umsatz * niedrige_provision
+END IF
+
+OUTPUT "Die Umsatzprovision beträgt: ", provision
+
+END

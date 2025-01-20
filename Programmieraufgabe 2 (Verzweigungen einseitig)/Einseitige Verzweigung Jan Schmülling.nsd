@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root xmlns:nsd="http://structorizer.fisch.lu/" version="3.28-01" preRepeat="until " postFor="to" preReturn="return" postForIn="in" preWhile="while " output="OUTPUT" input="INPUT" preFor="for" preExit="exit" preLeave="leave" ignoreCase="true" preForIn="foreach" stepFor="by" author="schmuelling" created="2025-01-20" changedby="schmuelling" changed="2025-01-20" origin="Structorizer 3.28-01" text="&#34;Programmieraufgabe 2: Verzweigung - einseitig&#34;,&#34;J. Schmülling&#34;" comment="" color="ffffff" type="program" style="nice">
+	<children>
+		<instruction text="&#34;DECLARE kontostand AS FLOAT&#34;,&#34;DECLARE zinssatz_pro_jahr AS FLOAT&#34;,&#34;DECLARE grenzbetrag AS FLOAT&#34;,&#34;DECLARE zinsen AS FLOAT&#34;" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
+		<instruction text="&#34;zinssatz_pro_jahr := 0.005&#34;" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
+		<instruction text="&#34;grenzbetrag := 2000.00&#34;" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
+		<instruction text="&#34;zinsen := 0.00&#34;" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
+		<instruction text="&#34;OUTPUT &#34;&#34;Kontostand eingeben: &#34;&#34;&#34;" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
+		<instruction text="&#34;INPUT kontostand&#34;" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
+		<alternative text="&#34;(kontostand &#62;= grenzbetrag)&#34;" comment="" color="ffffff" disabled="0">
+			<qTrue>
+				<instruction text="&#34;zinsen := kontostand * (zinssatz_pro_jahr / 12)&#34;" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
+			</qTrue>
+			<qFalse color="ffffff">
+			</qFalse>
+		</alternative>
+		<instruction text="&#34;OUTPUT &#34;&#34;Kontostand: &#34;&#34;, kontostand&#34;" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
+		<instruction text="&#34;OUTPUT &#34;&#34;Zinsen: &#34;&#34;, zinsen&#34;" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
+		<instruction text="&#34;OUTPUT &#34;&#34;Neuer Kontostand: &#34;&#34;, kontostand + zinsen&#34;" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
+	</children>
+</root>

@@ -1,0 +1,54 @@
+Programm:       Übungsaufgabe verschachtelte Verzweigung
+Author:         J. Schmülling
+Änderungsdatum: 20.01.2025
+
+BEGIN
+
+DECLARE stueckpreis AS FLOAT
+DECLARE stueckzahl AS FLOAT
+DECLARE geschaeftsbeziehung AS FLOAT
+DECLARE gewaehrter_rabatt AS FLOAT
+DECLARE rabatt_bis_500 AS FLOAT
+DECLARE rabatt_bis_1000 AS FLOAT
+DECLARE rabatt_ueber_1000 AS FLOAT
+DECLARE sonderrabatt_ab_10_jahren AS FLOAT
+
+DECLARE normal_preis AS FLOAT
+DECLARE rabatt_betrag AS FLOAT
+DECLARE endpreis AS FLOAT
+
+SET rabatt_bis_500 TO 0.02
+SET rabatt_bis_1000 TO 0.05
+SET rabatt_ueber_1000 TO 0.1
+SET sonderrabatt_ab_10_jahren TO 0.15
+
+OUTPUT "Geben Sie den Stückpreis des Artikels ein: "
+INPUT stueckpreis
+OUTPUT "Geben Sie die gekaufte Stückzahl ein: "
+INPUT stueckzahl
+OUTPUT "Geben Sie die Dauer der Geschäftsbeziehung in Jahren ein: "
+INPUT geschaeftsbeziehung
+
+IF stueckzahl > 500 THEN
+    IF stueckzahl > 1000 THEN
+        IF geschaeftsbeziehung > 10 THEN
+            SET gewaehrter_rabatt TO sonderrabatt_ab_10_jahren
+        ELSE   
+            SET gewaehrter_rabatt TO rabatt_ueber_1000
+        END IF
+    ELSE
+        SET gewaehrter_rabatt TO rabatt_bis_1000
+    END IF 
+ELSE
+    SET gewaehrter_rabatt TO rabatt_bis_500
+END IF
+
+SET normal_preis TO stueckzahl * stueckpreis
+SET rabatt_betrag TO normal_preis * gewaehrter_rabatt
+SET endpreis TO normal_preis - rabatt_betrag
+OUTPUT "Der Normalpreis liegt bei: ", normal_preis
+OUTPUT "Ihr Rabattsatz liegt bei: ", gewaehrter_rabatt
+OUTPUT "Ihr Rabatt beträgt somit: ", rabatt_betrag
+OUTPUT "Der Endpreis beträgt somit: ", endpreis 
+
+END

@@ -1,0 +1,27 @@
+Programm:       Übungsaufgabe einseitige Verzweigung
+Author:         J. Schmülling
+Änderungsdatum: 20.01.2025
+
+BEGIN
+DECLARE kontostand AS FLOAT
+DECLARE zinssatz_pro_jahr AS FLOAT
+DECLARE grenzbetrag AS FLOAT
+DECLARE zinsen AS FLOAT
+
+SET zinssatz_pro_jahr TO 0.005
+SET grenzbetrag TO 2000.00
+SET zinsen TO 0.00
+
+OUTPUT "Kontostand eingeben: "
+INPUT kontostand
+
+IF kontostand >= grenzbetrag THEN
+    SET zinsen TO kontostand * (zinssatz_pro_jahr / 12)
+
+END IF
+
+OUTPUT "Kontostand: ", kontostand
+OUTPUT "Zinsen: ", zinsen
+OUTPUT "Neuer Kontostand: ", kontostand + zinsen
+
+END
