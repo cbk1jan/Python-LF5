@@ -1,4 +1,4 @@
-#Programm:       Übungsaufgabe einseitige Verzweigung
+#Programm:       Übungsaufgabe zweiseitige Verzweigung
 #Author:         J. Schmülling
 #Änderungsdatum: 03.02.2025
 
