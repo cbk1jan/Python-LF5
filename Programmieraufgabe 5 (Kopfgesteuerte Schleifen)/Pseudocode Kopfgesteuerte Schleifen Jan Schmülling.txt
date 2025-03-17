@@ -1,0 +1,47 @@
+Programm:       Übungsaufgabe kopfgesteuerte Schleifen
+Author:         J. Schmülling
+Änderungsdatum: 17.03.2025
+
+BEGIN
+
+DECLARE kapital AS FLOAT
+DECLARE anlagedauer AS FLOAT
+DECLARE index AS FLOAT
+DECLARE zinsen AS FLOAT
+DECLARE zinssatz AS FLOAT
+
+OUTPUT "S P A R P L A N"
+OUTPUT "-"*20
+OUTPUT "Bitte geben Sie Ihr Startkapital ein: "
+INPUT kapital
+OUTPUT "Bitte geben Sie die Anlagedauer in Jahren ein: "
+INPUT anlagedauer
+OUTPUT "-"*20
+
+IF anlagedauer <= 2
+    zinssatz := 0.028
+ELSE
+    IF anlagedauer <= 10
+        zinssatz := 0,038
+    ELSE
+        IF anlagedauer > 10
+            zinssatz :=  0,045
+        ELSE 
+            OUTPUT "Fehler"
+        END IF 
+    END IF
+END IF
+
+
+index := 1 // Das aktuell berechnete Jahr
+
+WHILE index <= anlagedauer
+    zinsen := kapital * zinssatz
+
+    kapital = kapital + zinsen
+
+    OUTPUT "Jahr: ", index, "Betrag: ", kapital
+
+    index := index + 1
+
+END WHILE
