@@ -1,0 +1,40 @@
+Programm:       Übungsaufgabe kopfgesteuerte Schleifen
+Author:         J. Schmülling
+Änderungsdatum: 01.04.2025
+
+BEGIN
+
+DECLARE einlage AS FLOAT
+DECLARE zinssatz AS FLOAT
+DECLARE jahr AS INT
+DECLARE kontostand AS FLOAT
+
+einlage := 1
+
+while einlage > 0:
+
+    OUTPUT "O N E  M I L L I O N"
+    OUTPUT "-"*50
+    OUTPUT "Anlagenbetrag in EUR: "
+    INPUT einlage
+    OUTPUT "Verzinsung in %: "
+    INPUT zinssatz
+
+    IF einlage > 0 THEN
+        IF zinssatz > 0 THEN
+            kontostand := einlage
+
+            jahr := 1
+
+            WHILE kontostand < 1000000
+                kontostand := kontostand + (kontostand * (zinssatz / 100))
+                OUTPUT "Nach dem ", jahr, " Jahr: - ", kontostand, " EUR"
+                jahr := jahr + 1
+            END WHILE
+        ELSE 
+            OUTPUT "zinssatz muss über 0 sein"
+        END IF
+    ELSE
+        OUTPUT "Einlage muss über 0 sein"
+    END IF
+END WHILE

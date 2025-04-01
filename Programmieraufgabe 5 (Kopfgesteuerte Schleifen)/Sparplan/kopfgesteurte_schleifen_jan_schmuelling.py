@@ -1,6 +1,6 @@
 # Programm:       Übungsaufgabe kopfgesteuerte Schleifen
 # Author:         J. Schmülling
-# Änderungsdatum: 17.03.2025
+# Änderungsdatum: 31.03.2025
 
 kapital = 1
 
