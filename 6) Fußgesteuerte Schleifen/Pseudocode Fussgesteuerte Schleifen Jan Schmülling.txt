@@ -1,0 +1,30 @@
+Programm:       Übungsaufgabe Fussgesteuerte Schleifen
+Author:         J. Schmülling
+Änderungsdatum: 29.04.2025
+
+BEGIN
+    DECLARE anschaffungswert AS FLOAT
+    DECLARE nutzungsdauer AS INT
+    DECLARE jahr AS INT
+    DECLARE restwert AS FLOAT
+
+    OUTPUT "Geben Sie den Anschaffungswert ein:"
+    INPUT anschaffungswert
+    OUTPUT "Geben Sie die Nutzungsdauer in Jahren ein:"
+    INPUT nutzungsdauer
+
+    abschreibungsbetrag := anschaffungswert / nutzungsdauer
+
+    jahr := 1
+    restwert := anschaffungswert
+
+    OUTPUT "Jahr | Restwert | Abschreibungsbetrag"
+
+    DO
+        PRINT jahr, " | ", restwert, " | ", abschreibungsbetrag
+
+        restwert := restwert - abschreibungsbetrag
+        jahr := jahr + 1
+    WHILE restwert > 0
+
+END

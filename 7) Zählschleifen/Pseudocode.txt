@@ -1,0 +1,23 @@
+BEGIN
+    DECLARE Kapital AS FLOAT
+    DECLARE Zinssatz AS FLOAT
+    DECLARE Laufzeit AS INT
+    DECLARE Jahr AS INT
+    DECLARE Zinsen AS FLOAT
+
+    OUTPUT "Geben Sie das Startkapital ein:"
+    INPUT Kapital
+    OUTPUT "Geben Sie den Zinssatz in Prozent ein:"
+    INPUT Zinssatz
+    OUTPUT "Geben Sie die Laufzeit in Jahren ein:"
+    INPUT Laufzeit
+
+    Zinssatz := Zinssatz / 100
+
+    FOR Jahr := 1 TO Laufzeit STEP 1
+        Zinsen := Kapital * Zinssatz
+        Kapital := Kapital + Zinsen
+        OUTPUT "Kapital am Ende von Jahr", Jahr, ": ", Kapital
+    END FOR
+
+END
